@@ -30,10 +30,12 @@ def create_profile_page(request):
 
 def profile_details_page(request):
     profile = get_profile()
+    events_count = EventModels.objects.count()
 
     context = {
         'profile': profile,
         'nav_links': True,
+        'events_count': events_count,
 
     }
 
